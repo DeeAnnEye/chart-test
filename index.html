@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>My Chart</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="myChart"> </canvas>
+    </div>
+
+    <script>
+      let myChart = document.getElementById("myChart").getContext("2d");
+
+      let gChart = new Chart(myChart, {
+        type: "bar",
+        data: {
+          labels: [
+            "Tokyo",
+            "Delhi",
+            "Shanghai",
+            "Sao Paulo",
+            "Mexico City",
+            "Cairo",
+          ],
+          datasets: [
+            {
+              label: "Population",
+              data: [
+                37400068,
+                28514000,
+                25582000,
+                21650000,
+                21581000,
+                20076000,
+              ],
+            },
+          ],
+        },
+        options: {},
+      });
+    </script>
+  </body>
+</html>
