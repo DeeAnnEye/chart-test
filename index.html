@@ -6,6 +6,7 @@
     <title>My Chart</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
     <link
       rel="stylesheet"
@@ -19,6 +20,10 @@
 
     <script>
       let myChart = document.getElementById("myChart").getContext("2d");
+
+      Chart.defaults.font.family = "Helvetica";
+      Chart.defaults.font.size = 15;
+      Chart.defaults.font.color = "#777";
 
       let gChart = new Chart(myChart, {
         type: "bar",
@@ -57,7 +62,25 @@
             },
           ],
         },
-        options: {},
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: "Population in World Cities",
+              font: {
+                size: 25,
+              },
+            },
+            legend: {
+              display: false,
+              position: "top",
+              labels: {
+                color: "#000",
+              },
+            },
+            // layout and tooltips
+          },
+        },
       });
     </script>
   </body>
